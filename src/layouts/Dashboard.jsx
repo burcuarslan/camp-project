@@ -5,21 +5,23 @@ import { Grid } from 'semantic-ui-react'
 import { Route } from 'react-router'
 import ProducteDetail from '../pages/ProducteDetail'
 import CartDetail from '../pages/CartDetail'
+import { ToastContainer } from 'react-toastify'
 
 export default function Dashboard() {
     return (
         <div>
+            <ToastContainer position="bottom-right" />
             <Grid>
                 <Grid.Row>
-                    <Grid.Column  width={4}>
+                    <Grid.Column width={4}>
                         <Categories />
                     </Grid.Column>
 
-                    <Grid.Column  width={12}>
-                        <Route exact path="/"component={ProductList}/>
-                        <Route exact path="/products"component={ProductList}/>
-                        <Route path="/products/:id"component={ProducteDetail}/>
-                        <Route path="/cart"component={CartDetail}/>
+                    <Grid.Column width={12}>
+                        <Route exact path="/" component={ProductList} />
+                        <Route exact path="/products" component={ProductList} />
+                        <Route path="/products/:id" component={ProducteDetail} />
+                        <Route path="/cart" component={CartDetail} />
                     </Grid.Column>
                 </Grid.Row>
 
